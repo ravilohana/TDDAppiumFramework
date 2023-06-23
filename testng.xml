@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sauce Labs Demo App">
+    <test verbose="2" name="Android Sauce labs Demo App On Emulator">
+        <parameter name="platformName" value="Android"/>
+        <parameter name="deviceName" value="Pixel_5_API_31"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="mobileOSVersion" value="12"/>
+        <classes>
+            <class name="com.qa.mobile.tests.LoginTests" />
+        </classes>
+    </test>
+
+</suite>

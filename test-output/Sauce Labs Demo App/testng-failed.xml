@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Sauce Labs Demo App]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Android Sauce labs Demo App On Emulator(failed)">
+    <parameter name="platformName" value="Android"/>
+    <parameter name="udid" value="emulator-5554"/>
+    <parameter name="mobileOSVersion" value="12"/>
+    <parameter name="deviceName" value="Pixel_5_API_31"/>
+    <classes>
+      <class name="com.qa.mobile.tests.LoginTests">
+        <methods>
+          <include name="lockedAccount"/>
+          <include name="invalidUsername"/>
+          <include name="initializeDriver"/>
+          <include name="invalidUsernamePassword"/>
+          <include name="tearDown"/>
+          <include name="invalidPassword"/>
+          <include name="whichMethodExecuting"/>
+          <include name="validUsernamePassword"/>
+        </methods>
+      </class> <!-- com.qa.mobile.tests.LoginTests -->
+    </classes>
+  </test> <!-- Android Sauce labs Demo App On Emulator(failed) -->
+</suite> <!-- Failed suite [Sauce Labs Demo App] -->

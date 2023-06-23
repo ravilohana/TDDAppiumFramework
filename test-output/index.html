@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Sauce_Labs_Demo_App" class="navigator-link">
+              <span class="suite-name border-passed">Sauce Labs Demo App</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Sauce_Labs_Demo_App" class="navigator-link ">
+                    <span>D:\Mobile_Testing\AppiumTDDFramework\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Sauce_Labs_Demo_App" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Sauce_Labs_Demo_App" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Sauce_Labs_Demo_App" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Sauce_Labs_Demo_App" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Sauce_Labs_Demo_App" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Sauce_Labs_Demo_App" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">5 methods,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Sauce_Labs_Demo_App" class="hide-methods passed suite-Sauce_Labs_Demo_App"> (hide)</a> <!-- hide-methods passed suite-Sauce_Labs_Demo_App -->
+                      <a href="#" panel-name="suite-Sauce_Labs_Demo_App" class="show-methods passed suite-Sauce_Labs_Demo_App"> (show)</a> <!-- show-methods passed suite-Sauce_Labs_Demo_App -->
+                    </span>
+                    <div class="method-list-content passed suite-Sauce_Labs_Demo_App">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="invalidPassword">invalidPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="invalidUsername">invalidUsername</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="invalidUsernamePassword">invalidUsernamePassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="lockedAccount">lockedAccount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="validUsernamePassword">validUsernamePassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Sauce_Labs_Demo_App -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Sauce_Labs_Demo_App" class="panel Sauce_Labs_Demo_App">
+          <div class="suite-Sauce_Labs_Demo_App-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.mobile.tests.LoginTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidPassword">
+                  </a> <!-- invalidPassword -->
+                  <span class="method-name">invalidPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidUsername">
+                  </a> <!-- invalidUsername -->
+                  <span class="method-name">invalidUsername</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidUsernamePassword">
+                  </a> <!-- invalidUsernamePassword -->
+                  <span class="method-name">invalidUsernamePassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="lockedAccount">
+                  </a> <!-- lockedAccount -->
+                  <span class="method-name">lockedAccount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validUsernamePassword">
+                  </a> <!-- validUsernamePassword -->
+                  <span class="method-name">validUsernamePassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Sauce_Labs_Demo_App-class-passed -->
+        </div> <!-- panel Sauce_Labs_Demo_App -->
+        <div panel-name="test-xml-Sauce_Labs_Demo_App" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\Mobile_Testing\AppiumTDDFramework\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Sauce Labs Demo App&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Android Sauce labs Demo App On Emulator&quot; verbose=&quot;2&quot;&gt;
+    &lt;parameter name=&quot;platformName&quot; value=&quot;Android&quot;/&gt;
+    &lt;parameter name=&quot;udid&quot; value=&quot;emulator-5554&quot;/&gt;
+    &lt;parameter name=&quot;mobileOSVersion&quot; value=&quot;12&quot;/&gt;
+    &lt;parameter name=&quot;deviceName&quot; value=&quot;Pixel_5_API_31&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.qa.mobile.tests.LoginTests&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Android Sauce labs Demo App On Emulator --&gt;
+&lt;/suite&gt; &lt;!-- Sauce Labs Demo App --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Sauce_Labs_Demo_App" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Sauce Labs Demo App</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Android Sauce labs Demo App On Emulator (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Sauce_Labs_Demo_App" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Sauce Labs Demo App</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Sauce_Labs_Demo_App" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Sauce Labs Demo App</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Sauce_Labs_Demo_App');
+function tableData_Sauce_Labs_Demo_App() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(5);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'validUsernamePassword')
+data.setCell(0, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(0, 3, 15977);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'invalidPassword')
+data.setCell(1, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(1, 3, 7132);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'lockedAccount')
+data.setCell(2, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(2, 3, 6601);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'invalidUsername')
+data.setCell(3, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(3, 3, 6220);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'invalidUsernamePassword')
+data.setCell(4, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(4, 3, 5990);
+window.suiteTableData['Sauce_Labs_Demo_App']= { tableData: data, tableDiv: 'times-div-Sauce_Labs_Demo_App'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 41 seconds</span>
+              <div id="times-div-Sauce_Labs_Demo_App">
+              </div> <!-- times-div-Sauce_Labs_Demo_App -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Sauce_Labs_Demo_App" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Sauce Labs Demo App</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Sauce_Labs_Demo_App" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Sauce_Labs_Demo_App" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.mobile.tests.LoginTests</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initializeDriver(Android, Pixel_5_API_31, emulator-5554, 12)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidPassword())</span>
+                <span class="method-start">16022 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidPassword</span>
+                <span class="method-start">16610 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsername())</span>
+                <span class="method-start">23749 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidUsername</span>
+                <span class="method-start">23935 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsernamePassword())</span>
+                <span class="method-start">30156 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidUsernamePassword</span>
+                <span class="method-start">30256 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.lockedAccount())</span>
+                <span class="method-start">36246 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">lockedAccount</span>
+                <span class="method-start">36344 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.validUsernamePassword() throws java.lang.InterruptedExcep...)</span>
+                <span class="method-start">42946 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validUsernamePassword</span>
+                <span class="method-start">43040 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">59019 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
