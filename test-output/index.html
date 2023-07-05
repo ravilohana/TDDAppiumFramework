@@ -191,6 +191,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Sauce Labs Demo App&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.qa.mobile.listeners.TestListener&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Android Sauce labs Demo App On Emulator&quot; verbose=&quot;2&quot;&gt;
     &lt;parameter name=&quot;platformName&quot; value=&quot;Android&quot;/&gt;
     &lt;parameter name=&quot;udid&quot; value=&quot;emulator-5554&quot;/&gt;
@@ -241,28 +244,28 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validUsernamePassword')
 data.setCell(0, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(0, 3, 15977);
+data.setCell(0, 3, 57114);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'invalidPassword')
 data.setCell(1, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(1, 3, 7132);
+data.setCell(1, 3, 7079);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'lockedAccount')
 data.setCell(2, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(2, 3, 6601);
+data.setCell(2, 3, 6604);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'invalidUsername')
+data.setCell(3, 1, 'invalidUsernamePassword')
 data.setCell(3, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(3, 3, 6220);
+data.setCell(3, 3, 6040);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'invalidUsernamePassword')
+data.setCell(4, 1, 'invalidUsername')
 data.setCell(4, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(4, 3, 5990);
+data.setCell(4, 3, 5985);
 window.suiteTableData['Sauce_Labs_Demo_App']= { tableData: data, tableDiv: 'times-div-Sauce_Labs_Demo_App'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 41 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Sauce_Labs_Demo_App">
               </div> <!-- times-div-Sauce_Labs_Demo_App -->
             </div> <!-- times-div -->
@@ -293,49 +296,53 @@ return data;
                 <span class="method-name">initializeDriver(Android, Pixel_5_API_31, emulator-5554, 12)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">getData_LoginUser</span>
+                <span class="method-start">6053 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidPassword())</span>
-                <span class="method-start">16022 ms</span>
+                <span class="method-start">6062 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidPassword</span>
-                <span class="method-start">16610 ms</span>
+                <span class="method-start">6631 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsername())</span>
-                <span class="method-start">23749 ms</span>
+                <span class="method-start">13712 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidUsername</span>
-                <span class="method-start">23935 ms</span>
+                <span class="method-start">13881 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsernamePassword())</span>
-                <span class="method-start">30156 ms</span>
+                <span class="method-start">19867 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidUsernamePassword</span>
-                <span class="method-start">30256 ms</span>
+                <span class="method-start">19980 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.lockedAccount())</span>
-                <span class="method-start">36246 ms</span>
+                <span class="method-start">26020 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">lockedAccount</span>
-                <span class="method-start">36344 ms</span>
+                <span class="method-start">26115 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.validUsernamePassword() throws java.lang.InterruptedExcep...)</span>
-                <span class="method-start">42946 ms</span>
+                <span class="method-start">32719 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validUsernamePassword</span>
-                <span class="method-start">43040 ms</span>
+                <span class="method-start">32801 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">59019 ms</span>
+                <span class="method-start">89916 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

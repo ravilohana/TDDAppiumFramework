@@ -7,8 +7,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.Duration;
+import java.util.HashMap;
 
 public class TestUtils extends BaseTest {
 
@@ -18,7 +29,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static final long WAIT = 20;
+    public static final long WAIT = 5;
     public static void waitUntilIsVisible(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -184,6 +195,42 @@ public class TestUtils extends BaseTest {
     public static String getAttribute(WebDriver driver,WebElement ele,String attribute){
         waitUntilIsVisible(driver,ele);
         return  ele.getAttribute(attribute);
+    }
+
+    // Read XML file String attribute
+
+    public static HashMap<String,String> parseStringXML(InputStream IS_XML_file) throws ParserConfigurationException, IOException, SAXException {
+        HashMap<String,String> stringHashMap = new HashMap<>();
+        // Get Document Builder factory
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+
+        // Build Document
+        Document document = builder.parse(IS_XML_file);
+
+        // Normalize the XML Structure , It is just too important
+        document.getDocumentElement().normalize();
+
+        // Here comes the root node
+        Element root = document.getDocumentElement();
+        System.out.println(root.getNodeName());
+
+        // Get all the elements
+        NodeList nodeList = document.getElementsByTagName("string");
+        System.out.println("=================================");
+
+        for (int temp = 0; temp < nodeList.getLength() ; temp++) {
+            Node node = nodeList.item(temp);
+            System.out.println(" "); // Just a Separator
+            if(node.getNodeType() == Node.ELEMENT_NODE){
+                Element element = (Element) node;
+                // Store each element key value in map
+                stringHashMap.put(element.getAttribute("name"),element.getTextContent());
+
+            }
+        }
+
+        return stringHashMap;
     }
 
 }

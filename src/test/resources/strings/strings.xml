@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+<!--    error text-->
+    <string name = "invalid_credentials">Provided credentials do not match any user in this service.</string>
+    <string name="locked_account">Sorry, this user has been locked out.</string>
+    <string name = "products_title">Products</string>
+</resources>

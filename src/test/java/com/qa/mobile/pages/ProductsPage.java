@@ -11,6 +11,10 @@ public class ProductsPage extends BaseTest {
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"container header\"]//android.widget.TextView")
     private WebElement productsPageTitle;
 
+    public WebElement getProductsPageTitle() {
+        return productsPageTitle;
+    }
+
     public String getTitleProductsPage(){
         return  TestUtils.getAttribute(driver,productsPageTitle,"text");
 
