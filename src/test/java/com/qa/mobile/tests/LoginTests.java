@@ -51,7 +51,7 @@ public class LoginTests extends BaseTest {
         System.out.println("\n" + "************* Starting Test: " + m.getName() + "********" + "\n");
     }
 
-    @Test
+    @Test(priority = 1)
     public void invalidUsername() {
         loginPage.clickOpenMenu();
         loginPage.clickOnLoginLink();
@@ -65,7 +65,7 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(actualErrorMsg, expectedErrorMes);
     }
 
-    @Test
+    @Test(priority = 2)
     public void invalidPassword() {
         loginPage.clickOpenMenu();
         loginPage.clickOnLoginLink();
@@ -79,7 +79,7 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(actualErrorMsg, expectedErrorMes);
     }
 
-    @Test
+    @Test(priority = 3)
     public void invalidUsernamePassword() {
         loginPage.clickOpenMenu();
         loginPage.clickOnLoginLink();
@@ -93,7 +93,7 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(actualErrorMsg, expectedErrorMes);
     }
 
-    @Test
+    @Test(priority = 4)
     public void lockedAccount() {
         loginPage.clickOpenMenu();
         loginPage.clickOnLoginLink();
@@ -108,7 +108,7 @@ public class LoginTests extends BaseTest {
     }
 
 
-    @Test
+    @Test(priority = 5)
     public void validUsernamePassword() throws InterruptedException {
         loginPage.clickOpenMenu();
         loginPage.clickOnLoginLink();

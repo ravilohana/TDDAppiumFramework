@@ -12,11 +12,11 @@
     <classes>
       <class name="com.qa.mobile.tests.LoginTests">
         <methods>
-          <include name="invalidUsername"/>
           <include name="getData_LoginUser"/>
           <include name="initializeDriver"/>
           <include name="tearDown"/>
           <include name="whichMethodExecuting"/>
+          <include name="validUsernamePassword"/>
         </methods>
       </class> <!-- com.qa.mobile.tests.LoginTests -->
     </classes>

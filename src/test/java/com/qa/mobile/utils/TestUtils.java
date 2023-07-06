@@ -1,9 +1,11 @@
 package com.qa.mobile.utils;
 
 import com.qa.mobile.base.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +21,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class TestUtils extends BaseTest {
@@ -29,7 +32,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static final long WAIT = 5;
+    public static final long WAIT = 20;
     public static void waitUntilIsVisible(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -174,12 +177,39 @@ public class TestUtils extends BaseTest {
         wait.until(ExpectedConditions.stalenessOf(element));
     }
 
+    public static Boolean webElementIsDisplayed(WebDriver driver, WebElement element){
+        return element.isDisplayed();
+    }
+
 
     // Generic function for click an element
 
     public static void click(WebDriver driver,WebElement ele){
         waitUntilIsVisible(driver,ele);
         ele.click();
+    }
+
+
+    // Generic function for click an element
+
+    // Get Center of the element
+    public static Point getCenterOfElement(Point location, Dimension dimension) {
+        return new Point(location.getX() + (dimension.getWidth() / 2),
+                location.getY() + (dimension.getHeight() / 2));
+    }
+    public static void tap(AppiumDriver driver, WebElement element) {
+        Point openMenuPoints = element.getLocation();
+        Dimension openMenuDimension = element.getSize();
+        Point centerPoint = getCenterOfElement(openMenuPoints, openMenuDimension);
+        System.out.println("Center Points: " + centerPoint);
+        PointerInput pointerInput_finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        Sequence sequence = new Sequence(pointerInput_finger1, 1)
+                .addAction(pointerInput_finger1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), centerPoint))
+                .addAction(pointerInput_finger1.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+                .addAction(new Pause(pointerInput_finger1, Duration.ofMillis(200)))
+                .addAction(pointerInput_finger1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Collections.singleton(sequence));
     }
 
     // Generic function for send keys to element

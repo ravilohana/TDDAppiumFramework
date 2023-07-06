@@ -55,7 +55,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Sauce_Labs_Demo_App" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">10 methods,   10 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,6 +108,16 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="invalidPassword">invalidPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="invalidUsername">invalidUsername</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="invalidUsername">invalidUsername</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -118,7 +128,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="invalidUsernamePassword">invalidUsernamePassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="lockedAccount">lockedAccount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="lockedAccount">lockedAccount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sauce_Labs_Demo_App" title="com.qa.mobile.tests.LoginTests" class="method navigator-link" hash-for-method="validUsernamePassword">validUsernamePassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -153,6 +178,20 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="invalidPassword">
+                  </a> <!-- invalidPassword -->
+                  <span class="method-name">invalidPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidUsername">
+                  </a> <!-- invalidUsername -->
+                  <span class="method-name">invalidUsername</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="invalidUsername">
                   </a> <!-- invalidUsername -->
                   <span class="method-name">invalidUsername</span>
@@ -167,9 +206,30 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="invalidUsernamePassword">
+                  </a> <!-- invalidUsernamePassword -->
+                  <span class="method-name">invalidUsernamePassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="lockedAccount">
                   </a> <!-- lockedAccount -->
                   <span class="method-name">lockedAccount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="lockedAccount">
+                  </a> <!-- lockedAccount -->
+                  <span class="method-name">lockedAccount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validUsernamePassword">
+                  </a> <!-- validUsernamePassword -->
+                  <span class="method-name">validUsernamePassword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -203,6 +263,15 @@
       &lt;class name=&quot;com.qa.mobile.tests.LoginTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Android Sauce labs Demo App On Emulator --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;IOS Sauce labs Demo App On Browserstack&quot; verbose=&quot;2&quot;&gt;
+    &lt;parameter name=&quot;platformName&quot; value=&quot;IOS&quot;/&gt;
+    &lt;parameter name=&quot;udid&quot; value=&quot;00008120-001C783A3E3B401E&quot;/&gt;
+    &lt;parameter name=&quot;mobileOSVersion&quot; value=&quot;16.2&quot;/&gt;
+    &lt;parameter name=&quot;deviceName&quot; value=&quot;iphone 14 pro max&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.qa.mobile.tests.LoginTests&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- IOS Sauce labs Demo App On Browserstack --&gt;
 &lt;/suite&gt; &lt;!-- Sauce Labs Demo App --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -215,6 +284,9 @@
             <ul>
               <li>
                 <span class="test-name">Android Sauce labs Demo App On Emulator (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">IOS Sauce labs Demo App On Browserstack (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -240,32 +312,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validUsernamePassword')
 data.setCell(0, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(0, 3, 57114);
+data.setCell(0, 3, 57831);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'invalidPassword')
+data.setCell(1, 1, 'validUsernamePassword')
 data.setCell(1, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(1, 3, 7079);
+data.setCell(1, 3, 15949);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'lockedAccount')
 data.setCell(2, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(2, 3, 6604);
+data.setCell(2, 3, 14176);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'invalidUsernamePassword')
 data.setCell(3, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(3, 3, 6040);
+data.setCell(3, 3, 14137);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'invalidUsername')
+data.setCell(4, 1, 'invalidPassword')
 data.setCell(4, 2, 'com.qa.mobile.tests.LoginTests')
-data.setCell(4, 3, 5985);
+data.setCell(4, 3, 14076);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'invalidUsername')
+data.setCell(5, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(5, 3, 11810);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'invalidUsername')
+data.setCell(6, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(6, 3, 7725);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'lockedAccount')
+data.setCell(7, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(7, 3, 7274);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'invalidPassword')
+data.setCell(8, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(8, 3, 7045);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'invalidUsernamePassword')
+data.setCell(9, 2, 'com.qa.mobile.tests.LoginTests')
+data.setCell(9, 3, 6753);
 window.suiteTableData['Sauce_Labs_Demo_App']= { tableData: data, tableDiv: 'times-div-Sauce_Labs_Demo_App'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Sauce_Labs_Demo_App">
               </div> <!-- times-div-Sauce_Labs_Demo_App -->
             </div> <!-- times-div -->
@@ -298,51 +390,103 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">getData_LoginUser</span>
-                <span class="method-start">6053 ms</span>
+                <span class="method-start">8624 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidPassword())</span>
-                <span class="method-start">6062 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">invalidPassword</span>
-                <span class="method-start">6631 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsername())</span>
-                <span class="method-start">13712 ms</span>
+                <span class="method-start">8635 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidUsername</span>
-                <span class="method-start">13881 ms</span>
+                <span class="method-start">9296 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidPassword())</span>
+                <span class="method-start">17024 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidPassword</span>
+                <span class="method-start">17210 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsernamePassword())</span>
-                <span class="method-start">19867 ms</span>
+                <span class="method-start">24256 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidUsernamePassword</span>
-                <span class="method-start">19980 ms</span>
+                <span class="method-start">24387 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.lockedAccount())</span>
-                <span class="method-start">26020 ms</span>
+                <span class="method-start">31141 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">lockedAccount</span>
-                <span class="method-start">26115 ms</span>
+                <span class="method-start">31273 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.validUsernamePassword() throws java.lang.InterruptedExcep...)</span>
-                <span class="method-start">32719 ms</span>
+                <span class="method-start">38548 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validUsernamePassword</span>
-                <span class="method-start">32801 ms</span>
+                <span class="method-start">38660 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">89916 ms</span>
+                <span class="method-start">96492 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-test before">
+                <span class="method-name">initializeDriver(IOS, iphone 14 pro max, 00008120-001C783A3E3B401E, 16.2)</span>
+                <span class="method-start">96790 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">getData_LoginUser</span>
+                <span class="method-start">255570 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsername())</span>
+                <span class="method-start">255571 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidUsername</span>
+                <span class="method-start">255665 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidPassword())</span>
+                <span class="method-start">267476 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidPassword</span>
+                <span class="method-start">267593 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.invalidUsernamePassword())</span>
+                <span class="method-start">281669 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidUsernamePassword</span>
+                <span class="method-start">281766 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.lockedAccount())</span>
+                <span class="method-start">295903 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">lockedAccount</span>
+                <span class="method-start">295958 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">whichMethodExecuting(public void com.qa.mobile.tests.LoginTests.validUsernamePassword() throws java.lang.InterruptedExcep...)</span>
+                <span class="method-start">310136 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validUsernamePassword</span>
+                <span class="method-start">310190 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">326139 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

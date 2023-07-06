@@ -1,0 +1,42 @@
+
+
+iosAppPath -- ios app location -- config file
+username -- username of browserstack account --config file
+accesskey ---  access key for browserstack --config file
+automation name --- testNG parameter
+device name --- testNG parameter
+udid  --- 00008120-001C783A3E3B401E
+ios_version  --- testNG parameter
+browserstack_URL --config file
+
+
+
+
+public void IOSLaunchTest() throws MalformedURLException {
+        String BROWSERSTACK_USERNAME = "automateios_957Yns";
+        String BROWSERSTACK_ACCESS_KEY = "tZHEGcdaUywX1h3xKnrz";
+        UiAutomator2Options options = new UiAutomator2Options();
+        options.setAutomationName(AutomationName.IOS_XCUI_TEST);
+        options.setCapability("browserstack.user", BROWSERSTACK_USERNAME);
+        options.setCapability("browserstack.key", BROWSERSTACK_ACCESS_KEY);
+        options.setDeviceName("iphone 14 pro max");
+        options.setPlatformName("ios");
+        options.setPlatformVersion("16.2");
+        options.setAppPackage("com.saucelabs.mydemoapp.rn");
+        options.setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity");
+        options.setApp("bs://69e8d8ba6a3f118e5b5492e3bfe7c34bf71a140b");
+
+        URL browserstack_URL = new URL("https://" + BROWSERSTACK_USERNAME +":" +BROWSERSTACK_ACCESS_KEY +"@hub.browserstack.com/wd/hub");
+
+
+        RemoteWebDriver driver = new IOSDriver(browserstack_URL,options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+        driver.findElement(AppiumBy.accessibilityId("tab bar option menu")).click();
+        driver.findElement(AppiumBy.accessibilityId("menu item log in")).click();
+        driver.findElement(AppiumBy.accessibilityId("Username input field"))
+                .sendKeys("bob@example.com");
+        driver.findElement(AppiumBy.accessibilityId("Password input field"))
+                .sendKeys("10203040");
+        driver.findElement(AppiumBy.accessibilityId("Login button")).click();
+    }
+
