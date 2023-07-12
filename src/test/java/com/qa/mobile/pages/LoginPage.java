@@ -68,4 +68,13 @@ public class LoginPage extends BaseTest {
         return null;
     }
 
+    public ProductsPage doLogin(String uName,String pwd){
+        clickOpenMenu();
+        clickOnLoginLink();
+        enterUsername(uName);
+        enterPassword(pwd);
+        clickLoginBtn();
+        return new ProductsPage();
+    }
+
 }

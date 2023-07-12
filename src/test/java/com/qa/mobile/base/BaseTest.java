@@ -2,6 +2,7 @@ package com.qa.mobile.base;
 
 import com.qa.mobile.utils.TestUtils;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -60,6 +61,7 @@ public class BaseTest {
                     caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, props.getProperty("androidAutomationName"));
                     caps.setCapability(MobileCapabilityType.UDID, udid);
                     caps.setCapability(MobileCapabilityType.APP, androidAppPath);
+                    caps.setCapability("shouldTerminateApp",true);
                     //   caps.setCapability(MobileCapabilityType.NO_RESET, true);
                     //   caps.setCapability("appPackage", props.getProperty("androidAppPackage"));
                     //  caps.setCapability("appActivity", props.getProperty("androidAppActivity"));
@@ -96,6 +98,37 @@ public class BaseTest {
             }
         }
     }
+
+//    public void closeApp() throws Exception {
+//        switch (platform){
+//            case "Android":
+//                ((InteractsWithApps) driver).terminateApp(props.getProperty("androidAppPackage"));
+//                break;
+//            case "IOS":
+//                ((InteractsWithApps) driver).terminateApp(props.getProperty("IOSAppPackage"));
+//            default:
+//                throw new Exception("App is not closed for appPackage: " + props.getProperty("androidAppPackage") + " Platform: " + platform);
+//
+//        }
+//    }
+
+
+//    public void launchApp() throws Exception {
+//        switch (platform){
+//            case "Android":
+//                ((InteractsWithApps) driver).activateApp(props.getProperty("androidAppPackage"));
+//                System.out.println(props.getProperty("androidAppPackage"));
+//                System.out.println(platform);
+//                break;
+//            case "IOS":
+//                ((InteractsWithApps) driver).activateApp(props.getProperty("IOSAppPackage"));
+//                System.out.println(props.getProperty("androidAppPackage"));
+//                System.out.println(platform);
+//            default:
+//                throw new Exception("App is not closed for appPackage: " + props.getProperty("androidAppPackage") + " Platform: " + platform);
+//
+//        }
+//    }
 
     @AfterTest
     public void tearDown() {

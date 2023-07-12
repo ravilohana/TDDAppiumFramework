@@ -2,8 +2,10 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/src/rough_work/
 
-test-output/**
+test-output/
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

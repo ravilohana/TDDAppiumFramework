@@ -10,6 +10,20 @@ ios_version  --- testNG parameter
 browserstack_URL --config file
 
 
+upload curl command for upload
+
+curl -u "automateios_957Yns:tZHEGcdaUywX1h3xKnrz" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@D:/Mobile_Testing/AppiumTDDFramework/src/test/resources/app/iOS-Real-Device-MyRNDemoApp.1.3.0-162.ipa"
+
+D:/Mobile_Testing/AppiumTDDFramework/src/test/resources/app/iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa
+
+iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa
+{"app_url":"bs://bf1d906b47b51e17587ae2bbcb19c3edaf470210"}
+
+iOS-Real-Device-MyRNDemoApp.1.3.0-162.ipa
+
+{"app_url":"bs://88bb2ee10d2a3c16297670550f19f2769f84fdf6"}
+
+
 
 
 public void IOSLaunchTest() throws MalformedURLException {

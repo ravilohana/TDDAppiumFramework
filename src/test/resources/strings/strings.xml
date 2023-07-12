@@ -3,5 +3,18 @@
 <!--    error text-->
     <string name = "invalid_credentials">Provided credentials do not match any user in this service.</string>
     <string name="locked_account">Sorry, this user has been locked out.</string>
+
+<!--    Product Page-->
     <string name = "products_title">Products</string>
+    <string name = "products_page_product_SL_Backpack">Sauce Labs Backpack</string>
+    <string name = "products_page_product_SL_Backpack_price">$29.99</string>
+    <string name = "products_page_product_SL_Backpack_description">carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</string>
+
+<!--    Products Details Page-->
+
+    <string name = "products_details_page_product_SL_Backpack">Sauce Labs Backpack</string>
+    <string name = "products_details_page_product_SL_Backpack_price">$29.99</string>
+    <string name = "products_details_page_product_SL_Backpack_description">carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</string>
+
+
 </resources>

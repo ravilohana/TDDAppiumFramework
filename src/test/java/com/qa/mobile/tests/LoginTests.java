@@ -2,11 +2,13 @@ package com.qa.mobile.tests;
 
 import com.qa.mobile.base.BaseTest;
 import com.qa.mobile.pages.LoginPage;
+import com.qa.mobile.pages.MenuOptionsPage;
 import com.qa.mobile.pages.ProductsPage;
 import com.qa.mobile.utils.TestUtils;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,9 +27,10 @@ public class LoginTests extends BaseTest {
     ProductsPage productsPage;
     InputStream loginUserDataIS;
     JSONObject loginUserData;
+   // MenuOptionsPage menuOptionsPage;
     //JSONTokener jsonTokener;
     @BeforeClass
-    public void getData_LoginUser() throws IOException {
+    public void getData_LoginUser() throws Exception {
         try {
             String loginUserDataFilePath = "test_data/login_user.json";
             System.out.println(loginUserDataFilePath);
@@ -43,7 +46,19 @@ public class LoginTests extends BaseTest {
             }
         }
 
+
+
     }
+
+//    @AfterClass
+//    public void close_launch_app() throws Exception {
+//
+//        closeApp();
+//        System.out.println("CLOSED APP");
+//        launchApp();
+//        System.out.println("LAUNCH APP");
+//
+//    }
 
     @BeforeMethod
     public void whichMethodExecuting(Method m) {
@@ -116,12 +131,15 @@ public class LoginTests extends BaseTest {
         loginPage.enterPassword(loginUserData.getJSONObject("validUsernamePassword").getString("password"));
         productsPage = loginPage.clickLoginBtn();
 
-        TestUtils.waitUntilIsClickable(driver, productsPage.getProductsPageTitle());
+       // TestUtils.waitUntilIsClickable(driver, productsPage.getProductsPageTitle());
+        Thread.sleep(10000);
         String actualProductsTitle = productsPage.getTitleProductsPage();
         String expectedProductsTitle = stringStringHashMap.get("products_title");
         System.out.println("Actual Products Title: " + actualProductsTitle + "\n" + "Expected Products Title: " + expectedProductsTitle);
 
         Assert.assertEquals(actualProductsTitle, expectedProductsTitle);
+        loginPage.clickOpenMenu();
+        new MenuOptionsPage().tapOnLogoutOption();
 
 
     }
