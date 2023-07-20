@@ -4,21 +4,23 @@ import com.qa.mobile.utils.TestUtils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.appmanagement.BaseTerminateApplicationOptions;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.screenrecording.CanRecordScreen;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Base64;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class BaseTest {
@@ -29,6 +31,8 @@ public class BaseTest {
     InputStream inputStream;
     InputStream stringInputStream;
     protected static String platform;
+
+    protected static String dateTime;
 
     String androidAppPath = System.getProperty("user.dir") + File.separator + "src" + File.separator +
             "test" + File.separator + "resources" + File.separator + "app"
@@ -41,7 +45,8 @@ public class BaseTest {
     @Parameters({"platformName", "deviceName", "udid", "mobileOSVersion"})
     @BeforeMethod
     public void initializeDriver(String platformName, String deviceName, String udid, String mobileOSVersion) throws IOException {
-            platform = platformName;
+        dateTime = TestUtils.getDateTime();
+        platform = platformName;
         try {
             props = new Properties();
             String propsFileName = "config.properties";
@@ -97,6 +102,13 @@ public class BaseTest {
                 stringInputStream.close();
             }
         }
+
+        ((CanRecordScreen) driver).startRecordingScreen();
+    }
+
+
+    public AppiumDriver getDriver(){
+        return driver;
     }
 
     public void closeApp() throws Exception {
@@ -149,10 +161,36 @@ public class BaseTest {
         return driver;
     }
 
+    // get date time
 
+    public String getDate_Time(){
+        return dateTime;
+    }
 
     @AfterMethod
-    public void tearDown() {
+
+    public void tearDown(ITestResult result) {
+        String  media = ((CanRecordScreen)driver).stopRecordingScreen();
+
+        Map<String,String> params = result.getTestContext().getCurrentXmlTest().getAllParameters();
+
+        String dir = "Videos" + File.separator + params.get("platformName") + "_"
+                + params.get("deviceName") + "_OS_V_" + params.get("mobileOSVersion") + File.separator + getDate_Time()
+                + File.separator + result.getTestClass().getRealClass().getSimpleName();
+
+        File videosDir = new File(dir);
+
+        if(!videosDir.exists()){
+            videosDir.mkdirs();
+        }
+
+        try {
+            FileOutputStream stream = new FileOutputStream(videosDir + File.separator + result.getName() + ".mp4");
+            stream.write(Base64.getDecoder().decode(media));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         driver.quit();
     }
 }

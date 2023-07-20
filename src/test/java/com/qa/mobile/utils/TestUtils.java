@@ -20,8 +20,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 
 public class TestUtils extends BaseTest {
@@ -263,6 +266,15 @@ public class TestUtils extends BaseTest {
         return stringHashMap;
     }
 
+
+    // Date time method
+
+    public static String getDateTime(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-hh-mm-SS");
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
+        return dateFormat.format((date));
+    }
 
 
 }

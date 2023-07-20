@@ -14,20 +14,24 @@
 
 
         <classes>
-            <!--            <class name="com.qa.mobile.tests.LoginTests">-->
-            <!--&lt;!&ndash;                <methods>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <include name="invalidUsername"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;                </methods>&ndash;&gt;-->
-            <!--            </class>-->
-            <class name="com.qa.mobile.tests.EndToEndTest">
-                <methods>
-                    <include name="loginToCheckoutTest"/>
-<!--                    <include name="testDescendingProductName"/>-->
-<!--                    <include name="testAscendingProductPrice"/>-->
-<!--                    <include name="testDescendingProductPrice"/>-->
-                </methods>
+                        <class name="com.qa.mobile.tests.LoginTests">
+                            <methods>
+<!--                                <include name="invalidUsernamePassword"/>-->
+                                <include name="validUsernamePassword"/>
+                            </methods>
+                        </class>
+<!--            <class name="com.qa.mobile.tests.LoginTests"/>-->
+<!--            <class name="com.qa.mobile.tests.ProductTest"/>-->
+<!--            <class name="com.qa.mobile.tests.EndToEndTest"/>-->
 
-            </class>
+<!--                <methods>-->
+<!--                    <include name="loginToCheckoutTest"/>-->
+<!--&lt;!&ndash;                    <include name="testDescendingProductName"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testAscendingProductPrice"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testDescendingProductPrice"/>&ndash;&gt;-->
+<!--                </methods>-->
+
+<!--            </class>-->
         </classes>
 
     </test>

@@ -2,6 +2,8 @@
 
 import java.io.*;
 
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -48,6 +50,16 @@ public class CURL_Command_JAVA {
 //        [Test.allTheThings() T-Shirt, Sauce Labs Onesie, Sauce Labs Fleece Jacket, Sauce Labs Bolt T-Shirt, Sauce Labs Bike Light, Sauce Labs Backpack]
 
 
+        String fs = File.separator;
+        System.out.println(fs);
+        String fileSeparator = FileSystems.getDefault().getSeparator();
+        System.out.println(fileSeparator);
+
+        String fsp = File.pathSeparator;
+        System.out.println(fsp);
+
+        String separator = System.getProperty("file.separator");
+        System.out.println(separator);
 
     }
 

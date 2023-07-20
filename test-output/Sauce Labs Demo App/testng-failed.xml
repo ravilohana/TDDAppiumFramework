@@ -10,15 +10,15 @@
     <parameter name="mobileOSVersion" value="12"/>
     <parameter name="deviceName" value="Pixel_5_API_31"/>
     <classes>
-      <class name="com.qa.mobile.tests.EndToEndTest">
+      <class name="com.qa.mobile.tests.LoginTests">
         <methods>
-          <include name="getData_LoginUser"/>
           <include name="initializeDriver"/>
+          <include name="getData_LoginUser"/>
           <include name="tearDown"/>
           <include name="whichMethodExecuting"/>
-          <include name="loginToCheckoutTest"/>
+          <include name="validUsernamePassword"/>
         </methods>
-      </class> <!-- com.qa.mobile.tests.EndToEndTest -->
+      </class> <!-- com.qa.mobile.tests.LoginTests -->
     </classes>
   </test> <!-- Android Sauce labs Demo App On Emulator(failed) -->
 </suite> <!-- Failed suite [Sauce Labs Demo App] -->
