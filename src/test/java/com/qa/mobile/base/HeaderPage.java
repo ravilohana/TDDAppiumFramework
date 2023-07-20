@@ -1,6 +1,7 @@
 package com.qa.mobile.base;
 
 import com.qa.mobile.pages.MenuOptionsPage;
+import com.qa.mobile.pages.MyCartPage;
 import com.qa.mobile.utils.TestUtils;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
@@ -23,8 +24,9 @@ public class HeaderPage extends BaseTest{
     @FindBy(id = "tab bar option cart")
     private WebElement cartBadge;
 
-
-
+    public WebElement getHeaderSortBtn() {
+        return headerSortBtn;
+    }
 
     public MenuOptionsPage tapOnMenu(){
 
@@ -42,6 +44,12 @@ public class HeaderPage extends BaseTest{
 
     public void cartBadgeDisplayed(){
         TestUtils.webElementIsDisplayed(driver,cartBadge);
+    }
+
+
+    public MyCartPage tapOnCartBadgeBtn(){
+        TestUtils.tap(driver,cartBadge);
+        return new MyCartPage();
     }
 
 

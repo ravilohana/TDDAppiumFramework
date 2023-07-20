@@ -2,9 +2,14 @@ package com.qa.mobile.pages;
 
 import com.qa.mobile.base.BaseTest;
 import com.qa.mobile.utils.TestUtils;
+import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AndroidFindBys;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 import static com.qa.mobile.utils.TestUtils.waitUntilElementStaleness;
 
@@ -27,16 +32,61 @@ public class ProductsPage extends BaseTest {
     @FindBy(xpath = "//XCUIElementTypeStaticText[@label=\"$29.99\"]")
     private WebElement productPriceSLBackpack;
 
+    //Sauce Labs Fleece Jacket
+    @AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"store item\"])[4]")
+    private WebElement productSLFleeceJacket;
 
+
+    //Test.allTheThings() T-Shirt
+
+    @AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"store item\"])[6]")
+    private WebElement productSLTheThingsTShirt;
+
+    @AndroidFindBy(accessibility = "nameAsc")
+    private WebElement productNameSortByAscending;
+
+    @AndroidFindBy(accessibility = "nameDesc")
+    private WebElement productNameSortByDescending;
+
+    @AndroidFindBy(accessibility = "priceAsc")
+    private WebElement productPriceSortByAscending;
+
+    @AndroidFindBy(accessibility = "priceDesc")
+    private WebElement productPriceSortByDescending;
+    
+//    private List<WebElement> productsNameList;
+//
+//    public List<WebElement> getProductsNameList() {
+//        driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"store item text\"]"));
+//        return productsNameList;
+//    }
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"store item text\"]")
+    public List<WebElement> productsName;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"store item price\"]")
+    public List<WebElement> productsPrice;
 
 
     public WebElement getProductsPageTitle() {
         return productsPageTitle;
     }
 
+    public WebElement getProductNameSortByAscending() {
+        return productNameSortByAscending;
+    }
 
+    public WebElement getProductNameSortByDescending() {
+        return productNameSortByDescending;
+    }
 
+    public WebElement getProductPriceSortByAscending() {
+        return productPriceSortByAscending;
+    }
 
+    public WebElement getProductPriceSortByDescending() {
+        return productPriceSortByDescending;
+    }
 
     public String getTitleProductsPage() {
         if (platform.equalsIgnoreCase("Android")) {
@@ -80,5 +130,26 @@ public class ProductsPage extends BaseTest {
         TestUtils.tap(driver,productSLBackpack);
         return new ProductDetailsPage();
     }
+
+    public ProductDetailsPage tapOnProductSLBackpack(){
+        TestUtils.tap(driver,productSLBackpack);
+        return new ProductDetailsPage();
+    }
+
+    public ProductDetailsPage tapOnProductSLFleeceJacket(){
+        TestUtils.tap(driver,productSLFleeceJacket);
+        return new ProductDetailsPage();
+    }
+
+    public ProductDetailsPage tapOnProductSLTheThingsTShirt(){
+        TestUtils.tap(driver,productSLTheThingsTShirt);
+        return new ProductDetailsPage();
+    }
+
+
+
+
+
+
 
 }

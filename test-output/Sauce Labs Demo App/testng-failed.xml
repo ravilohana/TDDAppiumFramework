@@ -4,22 +4,21 @@
   <listeners>
     <listener class-name="com.qa.mobile.listeners.TestListener"/>
   </listeners>
-  <test thread-count="5" name="IOS Sauce labs Demo App On Browserstack(failed)">
-    <parameter name="platformName" value="IOS"/>
-    <parameter name="udid" value="00008120-001C783A3E3B401E"/>
-    <parameter name="mobileOSVersion" value="16.2"/>
-    <parameter name="deviceName" value="iphone 14 pro max"/>
+  <test thread-count="5" name="Android Sauce labs Demo App On Emulator(failed)">
+    <parameter name="platformName" value="Android"/>
+    <parameter name="udid" value="emulator-5554"/>
+    <parameter name="mobileOSVersion" value="12"/>
+    <parameter name="deviceName" value="Pixel_5_API_31"/>
     <classes>
-      <class name="com.qa.mobile.tests.ProductTest">
+      <class name="com.qa.mobile.tests.EndToEndTest">
         <methods>
-          <include name="validateProductOnProductPage"/>
-          <include name="validateProductOnProductDetailsPage"/>
-          <include name="initializeDriver"/>
-          <include name="whichMethodExecuting"/>
           <include name="getData_LoginUser"/>
+          <include name="initializeDriver"/>
           <include name="tearDown"/>
+          <include name="whichMethodExecuting"/>
+          <include name="loginToCheckoutTest"/>
         </methods>
-      </class> <!-- com.qa.mobile.tests.ProductTest -->
+      </class> <!-- com.qa.mobile.tests.EndToEndTest -->
     </classes>
-  </test> <!-- IOS Sauce labs Demo App On Browserstack(failed) -->
+  </test> <!-- Android Sauce labs Demo App On Emulator(failed) -->
 </suite> <!-- Failed suite [Sauce Labs Demo App] -->
