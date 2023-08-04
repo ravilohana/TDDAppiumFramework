@@ -4,9 +4,12 @@ target/
 !**/src/test/**/target/
 !**/src/rough_work/
 
-test-output/
-Screenshots/
-Videos/
+test-output/*
+Screenshots/*
+Videos/*
+Logs/*
+ServerLogs/*
+
 
 
 ### IntelliJ IDEA ###
