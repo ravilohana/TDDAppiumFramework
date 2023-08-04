@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
 public class CheckoutShippingAddressPage extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy(accessibility = "Full Name* input field")
     private WebElement checkoutFullName;
 
@@ -35,43 +35,43 @@ public class CheckoutShippingAddressPage extends BaseTest {
 
     // Enter Full Name
     public void enterFullName(String fullName){
-        TestUtils.sendKeys(driver,checkoutFullName,fullName);
+        testUtils.sendKeys(getDriver(),checkoutFullName,fullName);
     }
 
     // Enter Address line 1
     public void enterAddressLine1(String addressLine1){
-        TestUtils.sendKeys(driver,checkoutAddressLine1,addressLine1);
+        testUtils.sendKeys(getDriver(),checkoutAddressLine1,addressLine1);
     }
 
     // Enter Address line 2
     public void enterAddressLine2(String addressLine2){
-        TestUtils.sendKeys(driver,checkoutAddressLine2,addressLine2);
+        testUtils.sendKeys(getDriver(),checkoutAddressLine2,addressLine2);
     }
 
     // Enter city
     public void enterCity(String city){
-        TestUtils.sendKeys(driver,checkoutCity,city);
+        testUtils.sendKeys(getDriver(),checkoutCity,city);
     }
 
     // Enter state/region
     public void enterStateRegion(String state_region){
-        TestUtils.sendKeys(driver,checkoutState_Region,state_region);
+        testUtils.sendKeys(getDriver(),checkoutState_Region,state_region);
     }
 
     // Enter zip code
     public void enterZipCode(String zip_code){
-        TestUtils.sendKeys(driver,checkoutZipCode,zip_code);
+        testUtils.sendKeys(getDriver(),checkoutZipCode,zip_code);
     }
 
     // Enter zip code
     public void enterCountry(String country){
-        TestUtils.sendKeys(driver,checkoutCountry,country);
+        testUtils.sendKeys(getDriver(),checkoutCountry,country);
     }
 
     // click on Payment button
 
     public CheckoutCardDetailsPage tapOnPaymentBtn(){
-        TestUtils.tap(driver,checkoutPaymentBtn);
+        testUtils.tap(getDriver(),checkoutPaymentBtn);
         return new CheckoutCardDetailsPage();
     }
 

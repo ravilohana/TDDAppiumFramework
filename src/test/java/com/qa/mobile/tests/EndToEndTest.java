@@ -3,6 +3,7 @@ package com.qa.mobile.tests;
 import com.qa.mobile.base.BaseTest;
 import com.qa.mobile.base.HeaderPage;
 import com.qa.mobile.pages.*;
+import com.qa.mobile.utils.TestUtils;
 import com.qa.mobile.utils.UtilScrollSwipe;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -17,7 +18,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class EndToEndTest extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     LoginPage loginPage;
     JSONObject loginUserData;
 
@@ -100,7 +101,7 @@ public class EndToEndTest extends BaseTest {
         String qtyForProductA = productDetailsPage.getCounterTextQty();
         System.out.println("Total Qty for first Product : " +  qtyForProductA);
         productDetailsPage.tapOnAddToCart();
-        driver.navigate().back();
+        getDriver().navigate().back();
 
         // Second Product
 
@@ -116,10 +117,10 @@ public class EndToEndTest extends BaseTest {
         qtyForProductA = productDetailsPage.getCounterTextQty();
         System.out.println("Total Qty for Second Product: " +  qtyForProductA);
         productDetailsPage.tapOnAddToCart();
-        driver.navigate().back();
+        getDriver().navigate().back();
 
         // Third Product
-        UtilScrollSwipe.scroll(driver, UtilScrollSwipe.ScrollDirection.DOWN,0.3);
+        UtilScrollSwipe.scroll(getDriver(), UtilScrollSwipe.ScrollDirection.DOWN,0.3);
         productsPage.tapOnProductSLTheThingsTShirt();
         actualDefaultQtyForProduct = productDetailsPage.getCounterTextQty();
         expectedDefaultQtyForProduct = "1";
@@ -216,7 +217,7 @@ public class EndToEndTest extends BaseTest {
         productsPage = chkOutCnfPage.tapOnCheckoutContinueShopBtn();
 
         String actualProductsTitle = productsPage.getTitleProductsPage();
-        String expectedProductsTitle = stringStringHashMap.get("products_title");
+        String expectedProductsTitle = getStrings().get("products_title");
         System.out.println("Actual Products Title: " + actualProductsTitle + "\n" + "Expected Products Title: " + expectedProductsTitle);
 
         softAssert.assertEquals(actualProductsTitle, expectedProductsTitle);

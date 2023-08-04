@@ -1,9 +1,9 @@
 package com.qa.mobile.tests;
 
 import com.qa.mobile.base.BaseTest;
-import com.qa.mobile.base.HeaderPage;
+
 import com.qa.mobile.pages.LoginPage;
-import com.qa.mobile.pages.MenuOptionsPage;
+
 import com.qa.mobile.pages.ProductDetailsPage;
 import com.qa.mobile.pages.ProductsPage;
 import com.qa.mobile.utils.TestUtils;
@@ -28,21 +28,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ProductTest extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     LoginPage loginPage;
     JSONObject loginUserData;
 
     ProductsPage productsPage;
-    HeaderPage headerPage;
-    MenuOptionsPage menuOptionsPage;
+
     ProductDetailsPage productDetailsPage;
-    InputStream loginUserDataIS;
+
     ArrayList<String> productsList;
     ArrayList<String> productsPrice;
 
 
+
     @BeforeClass
     public void getData_LoginUser() throws Exception {
+        InputStream loginUserDataIS = null;
         try {
             String loginUserDataFilePath = "test_data/login_user.json";
             System.out.println(loginUserDataFilePath);
@@ -74,8 +75,7 @@ public class ProductTest extends BaseTest {
     @BeforeMethod
     public void whichMethodExecuting(Method m) {
         loginPage = new LoginPage();
-        headerPage = new HeaderPage();
-        menuOptionsPage = new MenuOptionsPage();
+
         productsPage = new ProductsPage();
         productDetailsPage = new ProductDetailsPage();
         productsList = new ArrayList<>();
@@ -93,17 +93,16 @@ public class ProductTest extends BaseTest {
 
         String actualProductName = productsPage.getProductName();
         System.out.println("actual Product Name: " + actualProductName);
-        String expectedProductName = stringStringHashMap.get("products_page_product_SL_Backpack");
+        String expectedProductName = getStrings().get("products_page_product_SL_Backpack");
         System.out.println("Expected Product Name: " + expectedProductName);
         softAssert.assertEquals(actualProductName,expectedProductName);
 
         String actualProductPrice = productsPage.getProductPrice();
         System.out.println("actual Product Price: " + actualProductPrice);
-        String expectedProductPrice = stringStringHashMap.get("products_page_product_SL_Backpack_price");
+        String expectedProductPrice = getStrings().get("products_page_product_SL_Backpack_price");
         System.out.println("Expected Product Price: " + expectedProductPrice);
         softAssert.assertEquals(actualProductPrice,expectedProductPrice);
-        menuOptionsPage = headerPage.tapOnMenu();
-        loginPage = menuOptionsPage.tapOnLogoutOption();
+
         softAssert.assertAll();
 
 
@@ -130,25 +129,23 @@ public class ProductTest extends BaseTest {
         Thread.sleep(10000);
         String actualProductName = productDetailsPage.getProductTitle();
         System.out.println("actual Product Name: " + actualProductName);
-        String expectedProductName = stringStringHashMap.get("products_details_page_product_SL_Backpack");
+        String expectedProductName = getStrings().get("products_details_page_product_SL_Backpack");
         System.out.println("Expected Product Name: " + expectedProductName);
         softAssert.assertEquals(actualProductName,expectedProductName);
 
         String actualProductPrice = productDetailsPage.getProductPrice();
         System.out.println("actual Product Price: " + actualProductPrice);
-        String expectedProductPrice = stringStringHashMap.get("products_details_page_product_SL_Backpack_price");
+        String expectedProductPrice = getStrings().get("products_details_page_product_SL_Backpack_price");
         System.out.println("Expected  Product Price: " + expectedProductPrice);
         softAssert.assertEquals(actualProductPrice,expectedProductPrice);
 
         String actualProductDescription = productDetailsPage.getProductDescription();
         System.out.println("actual Product Description: " + actualProductDescription);
 
-        String expectedProductDescription = stringStringHashMap.get("products_details_page_product_SL_Backpack_description");
+        String expectedProductDescription = getStrings().get("products_details_page_product_SL_Backpack_description");
         System.out.println("Expected Product Description: " + expectedProductDescription);
         softAssert.assertEquals(actualProductDescription,expectedProductDescription);
 
-        headerPage.tapOnMenu();
-        loginPage = menuOptionsPage.tapOnLogoutOption();
         softAssert.assertAll();
     }
 
@@ -156,9 +153,9 @@ public class ProductTest extends BaseTest {
     public void testAscendingProductName(){
         productsPage = loginPage.doLogin(loginUserData.getJSONObject("validUsernamePassword").getString("username"),
                 loginUserData.getJSONObject("validUsernamePassword").getString("password"));
-        TestUtils.tap(driver,headerPage.getHeaderSortBtn());
-        TestUtils.tap(driver,productsPage.getProductNameSortByAscending());
-        UtilScrollSwipe.scroll(driver, UtilScrollSwipe.ScrollDirection.DOWN,0.3);
+
+        testUtils.tap(getDriver(),productsPage.getProductNameSortByAscending());
+        UtilScrollSwipe.scroll(getDriver(), UtilScrollSwipe.ScrollDirection.DOWN,0.3);
 //        System.out.println(productsPage.getProductName());
 
 //        System.out.println("============" + productsPage.productsName);
@@ -166,7 +163,7 @@ public class ProductTest extends BaseTest {
 
         for(WebElement element :productsPage.productsName) {
 //            System.out.println("TEXT: "+ element.getAttribute("text"));
-               String pName = TestUtils.getAttribute(driver,element,"text");
+               String pName = testUtils.getAttribute(getDriver(),element,"text");
 //                System.out.println("pName------> " + pName);
                 productsList.add(pName);
 
@@ -188,9 +185,9 @@ public class ProductTest extends BaseTest {
         productsPage = loginPage.doLogin(loginUserData.getJSONObject("validUsernamePassword").getString("username"),
                 loginUserData.getJSONObject("validUsernamePassword").getString("password"));
 //        ((AndroidDriver) driver).activateApp("com.saucelabs.mydemoapp.rn");
-        TestUtils.tap(driver,headerPage.getHeaderSortBtn());
-        TestUtils.tap(driver,productsPage.getProductNameSortByDescending());
-        UtilScrollSwipe.scroll(driver, UtilScrollSwipe.ScrollDirection.DOWN,0.3);
+
+        testUtils.tap(getDriver(),productsPage.getProductNameSortByDescending());
+        UtilScrollSwipe.scroll(getDriver(), UtilScrollSwipe.ScrollDirection.DOWN,0.3);
 //        System.out.println(productsPage.getProductName());
 
 //        System.out.println("============" + productsPage.productsName);
@@ -198,7 +195,7 @@ public class ProductTest extends BaseTest {
 
         for(WebElement element :productsPage.productsName) {
 //            System.out.println("TEXT: "+ element.getAttribute("text"));
-            String pName = TestUtils.getAttribute(driver,element,"text");
+            String pName = testUtils.getAttribute(getDriver(),element,"text");
 //                System.out.println("pName------> " + pName);
             productsList.add(pName);
 
@@ -221,9 +218,9 @@ public class ProductTest extends BaseTest {
         productsPage = loginPage.doLogin(loginUserData.getJSONObject("validUsernamePassword").getString("username"),
                 loginUserData.getJSONObject("validUsernamePassword").getString("password"));
 //        ((AndroidDriver) driver).activateApp("com.saucelabs.mydemoapp.rn");
-        TestUtils.tap(driver,headerPage.getHeaderSortBtn());
-        TestUtils.tap(driver,productsPage.getProductPriceSortByAscending());
-        UtilScrollSwipe.scroll(driver, UtilScrollSwipe.ScrollDirection.DOWN,0.3);
+
+        testUtils.tap(getDriver(),productsPage.getProductPriceSortByAscending());
+        UtilScrollSwipe.scroll(getDriver(), UtilScrollSwipe.ScrollDirection.DOWN,0.3);
 //        System.out.println(productsPage.getProductName());
 
 //        System.out.println("============" + productsPage.productsName);
@@ -231,7 +228,7 @@ public class ProductTest extends BaseTest {
 
         for(WebElement element :productsPage.productsPrice) {
 //            System.out.println("TEXT: "+ element.getAttribute("text"));
-            String pPrice = TestUtils.getAttribute(driver,element,"text");
+            String pPrice = testUtils.getAttribute(getDriver(),element,"text");
 //                System.out.println("pName------> " + pName);
             productsPrice.add(pPrice);
 
@@ -254,9 +251,9 @@ public class ProductTest extends BaseTest {
                 loginUserData.getJSONObject("validUsernamePassword").getString("password"));
 //        ((AndroidDriver) driver).activateApp("com.saucelabs.mydemoapp.rn");
 //        ((AndroidDriver) driver).activateApp("com.saucelabs.mydemoapp.rn");
-        TestUtils.tap(driver,headerPage.getHeaderSortBtn());
-        TestUtils.tap(driver,productsPage.getProductPriceSortByDescending());
-       UtilScrollSwipe.scroll(driver, UtilScrollSwipe.ScrollDirection.DOWN,0.3);
+
+        testUtils.tap(getDriver(),productsPage.getProductPriceSortByDescending());
+       UtilScrollSwipe.scroll(getDriver(), UtilScrollSwipe.ScrollDirection.DOWN,0.3);
 //        System.out.println(productsPage.getProductName());
 
 //        System.out.println("============" + productsPage.productsName);
@@ -264,7 +261,7 @@ public class ProductTest extends BaseTest {
 
         for(WebElement element :productsPage.productsPrice) {
 //            System.out.println("TEXT: "+ element.getAttribute("text"));
-            String pPrice = TestUtils.getAttribute(driver,element,"text");
+            String pPrice = testUtils.getAttribute(getDriver(),element,"text");
 //                System.out.println("pName------> " + pName);
             productsPrice.add(pPrice);
 

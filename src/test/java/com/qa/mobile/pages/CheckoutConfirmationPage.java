@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
 public class CheckoutConfirmationPage extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"Checkout Complete\"]")
     private WebElement checkoutCnfTitle;
 
@@ -21,10 +21,10 @@ public class CheckoutConfirmationPage extends BaseTest {
 
     // get checkout confirmation title
     public String getCheckoutCnfTitle() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, checkoutCnfTitle, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, checkoutCnfTitle, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), checkoutCnfTitle, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), checkoutCnfTitle, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -33,10 +33,10 @@ public class CheckoutConfirmationPage extends BaseTest {
 
     // get checkout thanks msg
     public String getCheckoutCnfThanksMsg() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, checkoutThanksMsg, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, checkoutThanksMsg, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), checkoutThanksMsg, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), checkoutThanksMsg, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -46,10 +46,10 @@ public class CheckoutConfirmationPage extends BaseTest {
 
     // get checkout thanks msg
     public String getCheckoutCnfDispatchMsh() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, checkoutDispatchMsg, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, checkoutDispatchMsg, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), checkoutDispatchMsg, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), checkoutDispatchMsg, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -58,7 +58,7 @@ public class CheckoutConfirmationPage extends BaseTest {
 
     // click on Continue button
     public ProductsPage tapOnCheckoutContinueShopBtn(){
-        TestUtils.tap(driver,checkoutContinueShopBtn);
+        testUtils.tap(getDriver(),checkoutContinueShopBtn);
         return new ProductsPage();
     }
 }

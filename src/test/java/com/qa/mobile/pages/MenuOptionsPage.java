@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MenuOptionsPage extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy(accessibility = "menu item catalog")
     private WebElement catalogOptions;
 
@@ -56,28 +56,28 @@ public class MenuOptionsPage extends BaseTest {
 
     // Tap on login
     public LoginPage tapOnLoginOption() {
-        TestUtils.tap(driver, loginOptions);
+        testUtils.tap(getDriver(), loginOptions);
         return new LoginPage();
     }
 
     // tap on logout
     public LoginPage tapOnLogoutOption() {
-        TestUtils.tap(driver, logoutOptions);
+        testUtils.tap(getDriver(), logoutOptions);
         tapOnLogoutBtn();
         tapOnOKBtn();
         return new LoginPage();
     }
 
     public void tapOnLogoutBtn() {
-        TestUtils.tap(driver, logOutBtn);
+        testUtils.tap(getDriver(), logOutBtn);
 
     }
 
     public void tapOnOKBtn() {
-        if(platform.equalsIgnoreCase("Android")){
-            TestUtils.tap(driver, logOutBtn);
+        if(getPlatform().equalsIgnoreCase("Android")){
+            testUtils.tap(getDriver(), logOutBtn);
         }else {
-            TestUtils.tap(driver,IOSOkBtn);
+            testUtils.tap(getDriver(),IOSOkBtn);
         }
 
     }

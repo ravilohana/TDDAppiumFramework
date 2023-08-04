@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sauce Labs Demo App" parallel="tests">
+
+
+    <test verbose="2" name="Android Sauce labs Demo App On Emulator">
+        <listeners>
+            <listener class-name="com.qa.mobile.listeners.TestListener"></listener>
+        </listeners>
+        <!--        android parameters-->
+        <parameter name="platformName" value="Android"/>
+        <parameter name="deviceName" value="Pixel_5_API_31"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="mobileOSVersion" value="12"/>
+
+
+        <classes>
+            <class name="com.qa.mobile.tests.LoginTests">
+                <methods>
+                    <include name="invalidUsername"/>
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+
+
+    <test verbose="2" name="IOS Sauce labs Demo App On Browserstack">
+        <listeners>
+            <listener class-name="com.qa.mobile.listeners.TestListener"></listener>
+        </listeners>
+
+        <!--        IOS Paramteres-->
+        <parameter name="platformName" value="IOS"/>
+        <parameter name="deviceName" value="iphone 14 pro max"/>
+        <parameter name="udid" value="00008120-001C783A3E3B401E"/>
+        <parameter name="mobileOSVersion" value="16.2"/>
+
+        <classes>
+            <class name="com.qa.mobile.tests.LoginTests">
+                <methods>
+                    <include name="invalidUsername"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

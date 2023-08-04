@@ -7,7 +7,7 @@ import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.WebElement;
 
 public class CheckoutReviewPage extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy(xpath = "//android.widget.ScrollView[@content-desc=\"checkout review order screen\"]/android.view.ViewGroup/android.widget.TextView")
     private WebElement checkoutReviewTitle;
 
@@ -16,10 +16,10 @@ public class CheckoutReviewPage extends BaseTest {
 
     // get My cart title
     public String getCheckoutReviewTitle() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, checkoutReviewTitle, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, checkoutReviewTitle, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), checkoutReviewTitle, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), checkoutReviewTitle, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -27,7 +27,7 @@ public class CheckoutReviewPage extends BaseTest {
     }
 
     public CheckoutConfirmationPage tapOnCheckoutPlaceOrderBtn(){
-        TestUtils.tap(driver,checkoutPlaceOrderBtn);
+        testUtils.tap(getDriver(),checkoutPlaceOrderBtn);
         return new CheckoutConfirmationPage();
     }
 }

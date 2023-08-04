@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class CheckoutCardDetailsPage extends BaseTest {
 
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy(accessibility = "Full Name* input field")
     private WebElement cardDetailsFullName;
 
@@ -25,26 +26,26 @@ public class CheckoutCardDetailsPage extends BaseTest {
 
     // Enter Full Name
     public void enterCardFullName(String fullName){
-        TestUtils.sendKeys(driver,cardDetailsFullName,fullName);
+        testUtils.sendKeys(getDriver(),cardDetailsFullName,fullName);
     }
 
     // Enter Full Name
     public void enterCardNumber(String cardNumber){
-        TestUtils.sendKeys(driver,cardDetailsCardNumber,cardNumber);
+        testUtils.sendKeys(getDriver(),cardDetailsCardNumber,cardNumber);
     }
 
     // Enter Full Name
     public void enterCardExpiryDate(String expiryDate){
-        TestUtils.sendKeys(driver,cardDetailsExpirationDate,expiryDate);
+        testUtils.sendKeys(getDriver(),cardDetailsExpirationDate,expiryDate);
     }
 
     // Enter Full Name
     public void enterCardSecurityCode(String securityCode){
-        TestUtils.sendKeys(driver,cardDetailsSecurityCode,securityCode);
+        testUtils.sendKeys(getDriver(),cardDetailsSecurityCode,securityCode);
     }
 
     public CheckoutReviewPage tapOnReviewOrderBtn(){
-        TestUtils.tap(driver,cardDetailsReviewOrderBtn);
+        testUtils.tap(getDriver(),cardDetailsReviewOrderBtn);
         return new CheckoutReviewPage();
     }
 }

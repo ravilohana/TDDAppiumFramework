@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ProductDetailsPage extends BaseTest {
 
+    TestUtils testUtils = new TestUtils();
 
     @AndroidFindBy (xpath = "//android.view.ViewGroup[@content-desc=\"container header\"]/android.widget.TextView")
     @FindBy(id = "Sauce Labs Backpack")
@@ -37,20 +38,20 @@ public class ProductDetailsPage extends BaseTest {
     }
 
     public String getProductTitle() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, SLB_productTitle, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, SLB_productTitle, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), SLB_productTitle, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), SLB_productTitle, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
         return null;
     }
     public String getProductPrice() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, SLB_productPrice, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, SLB_productPrice, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), SLB_productPrice, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), SLB_productPrice, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -58,10 +59,10 @@ public class ProductDetailsPage extends BaseTest {
     }
 
     public String getProductDescription() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, SLB_productDescription, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, SLB_productDescription, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), SLB_productDescription, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), SLB_productDescription, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -70,10 +71,10 @@ public class ProductDetailsPage extends BaseTest {
 
     // Get the text for Qty for product
     public String getCounterTextQty() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, SL_CounterAmountText, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, SL_CounterAmountText, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), SL_CounterAmountText, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), SL_CounterAmountText, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -83,17 +84,17 @@ public class ProductDetailsPage extends BaseTest {
 
     // tap on SL_CounterMinusBtn
     public void tapOnCounterMinusBtn(){
-        TestUtils.tap(driver,SL_CounterMinusBtn);
+        testUtils.tap(getDriver(),SL_CounterMinusBtn);
     }
 
     // tap on SL_CounterPlusBtn
     public void tapOnCounterPlusBtn(){
-        TestUtils.tap(driver,SL_CounterPlusBtn);
+        testUtils.tap(getDriver(),SL_CounterPlusBtn);
     }
 
     // tap on SL_CounterMinusBtn
     public void tapOnAddToCart(){
-        TestUtils.tap(driver,SL_AddToCartBtn);
+        testUtils.tap(getDriver(),SL_AddToCartBtn);
     }
 
 

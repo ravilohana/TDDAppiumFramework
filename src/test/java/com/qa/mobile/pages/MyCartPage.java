@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyCartPage extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"container header\"]/android.widget.TextView")
     private WebElement myCartPageTitle;
 
@@ -36,10 +36,10 @@ public class MyCartPage extends BaseTest {
 
     // get My cart title
     public String getMyCartPageTitle() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, myCartPageTitle, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, myCartPageTitle, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), myCartPageTitle, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), myCartPageTitle, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -49,20 +49,20 @@ public class MyCartPage extends BaseTest {
     // get product label
     public ArrayList<String> getMyCartProductLabel() {
         ArrayList<String> productLabelList = new ArrayList<>();
-        if (platform.equalsIgnoreCase("Android")) {
+        if (getPlatform().equalsIgnoreCase("Android")) {
             for (WebElement element : myCartProductLabel) {
-                String productLabel = TestUtils.getAttribute(driver, element, "text");
+                String productLabel = testUtils.getAttribute(getDriver(), element, "text");
                 productLabelList.add(productLabel);
             }
             return productLabelList;
-        }else if (platform.equalsIgnoreCase("IOS")) {
+        }else if (getPlatform().equalsIgnoreCase("IOS")) {
             for (WebElement element : myCartProductLabel) {
-                String productLabel = TestUtils.getAttribute(driver, element, "text");
+                String productLabel = testUtils.getAttribute(getDriver(), element, "text");
                 productLabelList.add(productLabel);
             }
             return productLabelList;
         }else {
-            System.out.println("Invalid platform: " + platform);
+            System.out.println("Invalid platform: " + getPlatform());
 
         }
         return null;
@@ -72,20 +72,20 @@ public class MyCartPage extends BaseTest {
     // get product price
     public ArrayList<String> getMyCartProductPrice() {
         ArrayList<String> productLabelList = new ArrayList<>();
-        if (platform.equalsIgnoreCase("Android")) {
+        if (getPlatform().equalsIgnoreCase("Android")) {
             for (WebElement element : myCartProductPrice) {
-                String productLabel = TestUtils.getAttribute(driver, element, "text");
+                String productLabel = testUtils.getAttribute(getDriver(), element, "text");
                 productLabelList.add(productLabel);
             }
             return productLabelList;
-        }else if (platform.equalsIgnoreCase("IOS")) {
+        }else if (getPlatform().equalsIgnoreCase("IOS")) {
             for (WebElement element : myCartProductPrice) {
-                String productLabel = TestUtils.getAttribute(driver, element, "text");
+                String productLabel = testUtils.getAttribute(getDriver(), element, "text");
                 productLabelList.add(productLabel);
             }
             return productLabelList;
         }else {
-            System.out.println("Invalid platform: " + platform);
+            System.out.println("Invalid platform: " + getPlatform());
 
         }
         return null;
@@ -94,29 +94,29 @@ public class MyCartPage extends BaseTest {
     // click on Proceed to Checkout button
 
     public CheckoutShippingAddressPage tapOnProceedCheckoutBtn(){
-        TestUtils.tap(driver,myCartProceedCheckoutBtn);
+        testUtils.tap(getDriver(),myCartProceedCheckoutBtn);
         return new CheckoutShippingAddressPage();
     }
 
     // get the total items numbers
     public String getMyCartTotalItemsNo() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, myCartTotalItemsNo, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, myCartTotalItemsNo, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), myCartTotalItemsNo, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), myCartTotalItemsNo, "label");
         } else {
-            System.out.println("Invalid platform: " + platform);
+            System.out.println("Invalid platform: " + getPlatform());
         }
         return null;
     }
 
     public String getMyCartTotalItemsPrice() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, myCartTotalItemsPrice, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, myCartTotalItemsPrice, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), myCartTotalItemsPrice, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), myCartTotalItemsPrice, "label");
         } else {
-            System.out.println("Invalid platform: " + platform);
+            System.out.println("Invalid platform: " + getPlatform());
         }
         return null;
     }

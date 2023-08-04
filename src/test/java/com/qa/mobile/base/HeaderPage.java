@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HeaderPage extends BaseTest{
 
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"open menu\"]//android.widget.ImageView")
     @FindBy(id = "tab bar option menu")
     private WebElement menuBtn;
@@ -30,25 +31,25 @@ public class HeaderPage extends BaseTest{
 
     public MenuOptionsPage tapOnMenu(){
 
-        TestUtils.tap(driver,menuBtn);
+        testUtils.tap(getDriver(),menuBtn);
         return new MenuOptionsPage();
     }
 
     public void myDemoAppLogoDisplayed(){
-        TestUtils.webElementIsDisplayed(driver,myDemoAppLogo);
+        TestUtils.webElementIsDisplayed(getDriver(),myDemoAppLogo);
     }
 
     public void headerSortBtnDisplayed(){
-        TestUtils.webElementIsDisplayed(driver,headerSortBtn);
+        TestUtils.webElementIsDisplayed(getDriver(),headerSortBtn);
     }
 
     public void cartBadgeDisplayed(){
-        TestUtils.webElementIsDisplayed(driver,cartBadge);
+        TestUtils.webElementIsDisplayed(getDriver(),cartBadge);
     }
 
 
     public MyCartPage tapOnCartBadgeBtn(){
-        TestUtils.tap(driver,cartBadge);
+        testUtils.tap(getDriver(),cartBadge);
         return new MyCartPage();
     }
 

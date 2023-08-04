@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage extends BaseTest {
 
 
-
+    TestUtils testUtils = new TestUtils();
 
     @AndroidFindBy(accessibility = "open menu")
     @FindBy(id = "tab bar option menu")
@@ -37,30 +37,30 @@ public class LoginPage extends BaseTest {
     private WebElement errorMsg;
 
     public void enterUsername(String username){
-        TestUtils.sendKeys(driver,usernameTxtField,username);
+        testUtils.sendKeys(getDriver(),usernameTxtField,username);
     }
 
     public void enterPassword(String password){
-        TestUtils.sendKeys(driver,passwordTxtField,password);
+        testUtils.sendKeys(getDriver(),passwordTxtField,password);
     }
 
     public void clickOpenMenu(){
-        TestUtils.tap(driver,openMenu);
+        testUtils.tap(getDriver(),openMenu);
     }
 
     public void clickOnLoginLink(){
-        TestUtils.tap(driver,loginLink);
+        testUtils.tap(getDriver(),loginLink);
     }
     public ProductsPage clickLoginBtn(){
-        TestUtils.tap(driver,loginBtn);
+        testUtils.tap(getDriver(),loginBtn);
         return new ProductsPage();
     }
 
     public  String getErrorTxt(){
-        if(platform.equalsIgnoreCase("Android")){
-            return TestUtils.getAttribute(driver,errorMsg,"text");
-        }else if (platform.equalsIgnoreCase("IOS")){
-            return TestUtils.getAttribute(driver,errorMsg,"label");
+        if(getPlatform().equalsIgnoreCase("Android")){
+            return testUtils.getAttribute(getDriver(),errorMsg,"text");
+        }else if (getPlatform().equalsIgnoreCase("IOS")){
+            return testUtils.getAttribute(getDriver(),errorMsg,"label");
         }
         else {
             System.out.println("Invalid platform: " + platform);

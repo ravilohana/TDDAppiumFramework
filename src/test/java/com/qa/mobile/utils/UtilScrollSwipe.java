@@ -35,7 +35,7 @@ public class UtilScrollSwipe {
                 .release().perform();
     }*/
 
-    public static void scrollNClick(WebDriver driver , By listItems, String Text){
+    public static void scrollNClick(AppiumDriver driver , By listItems, String Text){
         boolean flag = false;
 
         while(true){
@@ -54,13 +54,13 @@ public class UtilScrollSwipe {
         }
     }
 
-    public static void scrollNClick(WebDriver driver , WebElement el){
+    public static void scrollNClick(AppiumDriver driver , WebElement el){
         int retry = 0;
         while(retry <= 5){
             try{
                 el.click();
                 break;
-            }catch (org.openqa.selenium.NoSuchElementException e){
+            }catch (NoSuchElementException e){
                 //scrollDown();
                 scroll(driver, ScrollDirection.DOWN, SCROLL_RATIO);
                 retry++;
@@ -68,7 +68,7 @@ public class UtilScrollSwipe {
         }
     }
 
-    public static void scrollIntoView(WebDriver driver,String Text){
+    public static void scrollIntoView(AppiumDriver driver,String Text){
         //https://developer.android.com/reference/androidx/test/uiautomator/UiSelector
 
 
@@ -81,7 +81,7 @@ public class UtilScrollSwipe {
                 */
     }
 
-    public static void scrollTo(WebDriver driver,String Text){
+    public static void scrollTo(AppiumDriver driver,String Text){
         //https://appium.io/docs/en/writing-running-appium/ios/ios-xctest-mobile-gestures/
 
         if(driver instanceof AndroidDriver){
@@ -100,14 +100,14 @@ public class UtilScrollSwipe {
         UP, DOWN, LEFT, RIGHT
     }
 
-    private static Dimension getWindowSize(WebDriver driver) {
+    private static Dimension getWindowSize(AppiumDriver driver) {
         if (windowSize == null) {
             windowSize = driver.manage().window().getSize();
         }
         return windowSize;
     }
 
-    public static void scroll(WebDriver driver , ScrollDirection dir, double scrollRatio) {
+    public static void scroll(AppiumDriver driver , ScrollDirection dir, double scrollRatio) {
         if (scrollRatio < 0 || scrollRatio > 1) {
             throw new Error("Scroll distance must be between 0 and 1");
         }
@@ -128,7 +128,7 @@ public class UtilScrollSwipe {
         }
     }
 
-    public static void swipe(WebDriver driver ,Point start, Point end, Duration duration) {
+    public static void swipe(AppiumDriver driver ,Point start, Point end, Duration duration) {
         boolean isAndroid = driver instanceof AndroidDriver;
 
         PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
@@ -148,7 +148,7 @@ public class UtilScrollSwipe {
 
 
 
-    public static void drawing(WebDriver driver,WebElement drawingPanel) throws InterruptedException {
+    public static void drawing(AppiumDriver driver,WebElement drawingPanel) throws InterruptedException {
         Point location =  drawingPanel.getLocation();
         Dimension size = drawingPanel.getSize();
         // Vertical line

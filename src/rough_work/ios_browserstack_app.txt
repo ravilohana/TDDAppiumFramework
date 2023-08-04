@@ -1,4 +1,6 @@
 
+babjoshi7700@gmail.com
+pwd: $B@b!t@J0sh!$@1985
 
 iosAppPath -- ios app location -- config file
 username -- username of browserstack account --config file
@@ -10,18 +12,22 @@ ios_version  --- testNG parameter
 browserstack_URL --config file
 
 
+
 upload curl command for upload
 
-curl -u "automateios_957Yns:tZHEGcdaUywX1h3xKnrz" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@D:/Mobile_Testing/AppiumTDDFramework/src/test/resources/app/iOS-Real-Device-MyRNDemoApp.1.3.0-162.ipa"
+curl -u "babitajoshi_VKkH5h:QEfYTfPKTczabvamxDhE" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@D:/Mobile_Testing/AppiumTDDFramework/src/test/resources/app/Android-MyDemoAppRN.1.3.0.build-244.apk"
 
-D:/Mobile_Testing/AppiumTDDFramework/src/test/resources/app/iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa
+{"app_url":"bs://6aa74441b8f0335ed508d54e743b3a842cf7c49a"}
 
-iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa
-{"app_url":"bs://bf1d906b47b51e17587ae2bbcb19c3edaf470210"}
+bs://6aa74441b8f0335ed508d54e743b3a842cf7c49a
 
-iOS-Real-Device-MyRNDemoApp.1.3.0-162.ipa
+ios app -- iOS-Real-Device-MyRNDemoApp.1.3.0-162.ipa
+bs://d8131dc7c3bf8c279b6f1da8e4b5212584dba286
 
-{"app_url":"bs://88bb2ee10d2a3c16297670550f19f2769f84fdf6"}
+"udid":"00008120-001134403633401E"
+"bundleID":"com.saucelabs.mydemoapp.rn",
+"bundleId":"com.saucelabs.mydemoapp.rn",
+
 
 
 

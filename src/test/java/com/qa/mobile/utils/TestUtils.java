@@ -18,16 +18,17 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class TestUtils extends BaseTest {
+public class TestUtils extends BaseTest{
 
     // ************ Generic Methods for Waits ***********
     /*
@@ -36,7 +37,7 @@ public class TestUtils extends BaseTest {
      * @param element
      */
     public static final long WAIT = 20;
-    public static void waitUntilIsVisible(WebDriver driver, WebElement element) {
+    public  void waitUntilIsVisible(AppiumDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
@@ -47,7 +48,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilIsVisible(WebDriver driver, By element) {
+    public static void waitUntilIsVisible(AppiumDriver driver, By element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
@@ -68,7 +69,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilIsPresent(WebDriver driver, By element) {
+    public static void waitUntilIsPresent(AppiumDriver driver, By element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.presenceOfElementLocated(element));
     }
@@ -79,7 +80,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilIsDisappears(WebDriver driver, By element) {
+    public static void waitUntilIsDisappears(AppiumDriver driver, By element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(element));
     }
@@ -90,7 +91,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilIsDisappears(WebDriver driver, WebElement element) {
+    public static void waitUntilIsDisappears(AppiumDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
@@ -101,7 +102,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilIsAppearsAndDisappears(WebDriver driver, By element) {
+    public static void waitUntilIsAppearsAndDisappears(AppiumDriver driver, By element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
         WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(2), Duration.ofSeconds(100));
@@ -114,7 +115,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilIsAppearsAndDisappears(WebDriver driver, WebElement element) {
+    public static void waitUntilIsAppearsAndDisappears(AppiumDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until(ExpectedConditions.visibilityOf(element));
         WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(2), Duration.ofSeconds(100));
@@ -127,7 +128,7 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilIsClickable(WebDriver driver, WebElement element) {
+    public static void waitUntilIsClickable(AppiumDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2), Duration.ofSeconds(50));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
@@ -138,7 +139,7 @@ public class TestUtils extends BaseTest {
      * @param element
      * @param attribute
      */
-    public static void waitUntilAttributeToBeNotEmpty(WebDriver driver, WebElement element, String attribute) {
+    public static void waitUntilAttributeToBeNotEmpty(AppiumDriver driver, WebElement element, String attribute) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT), Duration.ofSeconds(50));
         wait.until(ExpectedConditions.attributeToBeNotEmpty(element, attribute));
     }
@@ -165,7 +166,7 @@ public class TestUtils extends BaseTest {
      * @param element
      * @param value
      */
-    private static void waitUntilHasValue(WebDriver driver, WebElement element, String value) {
+    private static void waitUntilHasValue(AppiumDriver driver, WebElement element, String value) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT));
         wait.until((ExpectedCondition<Boolean>) (WebDriver f) -> !"".equals(element.getAttribute(value)));
     }
@@ -175,19 +176,19 @@ public class TestUtils extends BaseTest {
      * @param driver
      * @param element
      */
-    public static void waitUntilElementStaleness(WebDriver driver, WebElement element) {
+    public  void waitUntilElementStaleness(AppiumDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT), Duration.ofSeconds(50));
         wait.until(ExpectedConditions.stalenessOf(element));
     }
 
-    public static Boolean webElementIsDisplayed(WebDriver driver, WebElement element){
+    public static Boolean webElementIsDisplayed(AppiumDriver driver, WebElement element){
         return element.isDisplayed();
     }
 
 
     // Generic function for click an element
 
-    public static void click(WebDriver driver,WebElement ele){
+    public  void click(AppiumDriver driver,WebElement ele){
         waitUntilIsVisible(driver,ele);
         ele.click();
     }
@@ -196,11 +197,11 @@ public class TestUtils extends BaseTest {
     // Generic function for click an element
 
     // Get Center of the element
-    public static Point getCenterOfElement(Point location, Dimension dimension) {
+    public  Point getCenterOfElement(Point location, Dimension dimension) {
         return new Point(location.getX() + (dimension.getWidth() / 2),
                 location.getY() + (dimension.getHeight() / 2));
     }
-    public static void tap(AppiumDriver driver, WebElement element) {
+    public  void tap(AppiumDriver driver, WebElement element) {
         Point openMenuPoints = element.getLocation();
         Dimension openMenuDimension = element.getSize();
         Point centerPoint = getCenterOfElement(openMenuPoints, openMenuDimension);
@@ -217,7 +218,7 @@ public class TestUtils extends BaseTest {
 
     // Generic function for send keys to element
 
-    public static void sendKeys(WebDriver driver,WebElement ele,String txt){
+    public  void sendKeys(AppiumDriver driver,WebElement ele,String txt){
         waitUntilIsVisible(driver,ele);
         ele.clear();
         ele.sendKeys(txt);
@@ -225,14 +226,14 @@ public class TestUtils extends BaseTest {
 
     // Generic function to get attribute of an element
 
-    public static String getAttribute(WebDriver driver,WebElement ele,String attribute){
+    public  String getAttribute(AppiumDriver driver,WebElement ele,String attribute){
         waitUntilIsVisible(driver,ele);
         return  ele.getAttribute(attribute);
     }
 
     // Read XML file String attribute
 
-    public static HashMap<String,String> parseStringXML(InputStream IS_XML_file) throws ParserConfigurationException, IOException, SAXException {
+    public  HashMap<String,String> parseStringXML(InputStream IS_XML_file) throws ParserConfigurationException, IOException, SAXException {
         HashMap<String,String> stringHashMap = new HashMap<>();
         // Get Document Builder factory
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -269,11 +270,44 @@ public class TestUtils extends BaseTest {
 
     // Date time method
 
-    public static String getDateTime(){
+    public  String getDateTime(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-hh-mm-SS");
         Date date = new Date();
         System.out.println(dateFormat.format(date));
         return dateFormat.format((date));
+    }
+
+
+    public void log(String txt) {
+        BaseTest baseTest = new BaseTest();
+        String msg = Thread.currentThread().getId() + ":" + baseTest.getPlatform() + ":" + baseTest.getDeviceName() + ":"
+                + Thread.currentThread().getStackTrace()[2].getClassName() + ":" + txt;
+
+        System.out.println(msg);
+
+        String strFile = "logs" + File.separator + baseTest.getPlatform() + "_" + baseTest.getDeviceName()
+                + File.separator + baseTest.getDate_Time();
+
+        File logFile = new File(strFile);
+
+        if (!logFile.exists()) {
+            logFile.mkdirs();
+        }
+
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(logFile + File.separator + "log.txt",true);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        printWriter.println(msg);
+        printWriter.close();
+    }
+
+    public Logger log() {
+        return LogManager.getLogger(Thread.currentThread().getStackTrace()[2].getClassName());
     }
 
 

@@ -1,0 +1,86 @@
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:13.724 BaseTest:131-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:25.017 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:25.421 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:27.205 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:29.396 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:30.605 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:32.107 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:32.808 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:07:34.148 BaseTest:289-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-06-07-332\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:30.043 BaseTest:126-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:42.476 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:42.894 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:44.707 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:46.831 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:48.043 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:49.440 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:50.041 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:31:51.375 BaseTest:247-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-06-31-713\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:32.445 BaseTest:128-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:44.881 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:45.272 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:47.011 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:49.116 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:50.435 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:51.787 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:53.131 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:44:54.562 BaseTest:275-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-06-44-141\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:05.838 BaseTest:127-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:18.123 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:18.537 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:20.316 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:22.411 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:23.641 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:25.095 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:25.730 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:52:27.091 BaseTest:278-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-06-52-591\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:55:41.839 BaseTest:127-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:55:53.870 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:55:54.256 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:55:56.026 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:55:58.563 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:55:59.768 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:56:01.827 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:56:02.387 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 18:56:03.715 BaseTest:279-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-06-55-559\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:01:25.651 BaseTest:127-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:01:38.129 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:01:38.529 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:04.519 BaseTest:127-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:17.656 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:18.040 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:19.847 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:22.025 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:23.218 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:24.581 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:25.231 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:02:26.558 BaseTest:278-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-07-02-287\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:21:41.326 BaseTest:130-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:21:53.665 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:21:54.082 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:21:55.875 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:21:57.998 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:21:59.198 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:22:00.659 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:22:01.363 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:22:02.246 BaseTest:299-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-07-21-325\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:22:02.782 BaseTest:234-Appium Server Stopped...
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:24:49.341 BaseTest:130-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:01.890 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:02.345 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:04.107 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:06.260 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:07.420 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:08.785 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:09.457 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:10.790 BaseTest:299-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-07-24-341\LoginTests\invalidUsername.mp4
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:25:11.307 BaseTest:234-Appium Server Stopped...
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:36:53.870 BaseTest:130-log path: Logs\Android_Pixel_5_API_31
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:06.261 LoginTests:72-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:06.660 LoginTests:74-menu clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:08.401 LoginTests:76-log-in link clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:10.512 LoginTests:78-username entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:11.707 LoginTests:80-password entered!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:13.055 LoginTests:82-login button clicked!
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:13.787 LoginTests:88-Assertion is successful of error message
+[LogsAndroid_Pixel_5_API_31 INFO ] 2023-08-04 19:37:14.517 BaseTest:299-video path: Videos\Android_Pixel_5_API_31_OS_V_12\2023-08-04-07-36-869\LoginTests\invalidUsername.mp4

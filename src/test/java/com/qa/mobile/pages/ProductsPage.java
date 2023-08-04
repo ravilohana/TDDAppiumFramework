@@ -11,10 +11,10 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static com.qa.mobile.utils.TestUtils.waitUntilElementStaleness;
+
 
 public class ProductsPage extends BaseTest {
-
+    TestUtils testUtils = new TestUtils();
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"container header\"]//android.widget.TextView")
     @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Products\"]")
     private WebElement productsPageTitle;
@@ -31,6 +31,7 @@ public class ProductsPage extends BaseTest {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"$29.99\"]")
     @FindBy(xpath = "//XCUIElementTypeStaticText[@label=\"$29.99\"]")
     private WebElement productPriceSLBackpack;
+
 
     //Sauce Labs Fleece Jacket
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"store item\"])[4]")
@@ -89,10 +90,10 @@ public class ProductsPage extends BaseTest {
     }
 
     public String getTitleProductsPage() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, productsPageTitle, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, productsPageTitle, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), productsPageTitle, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), productsPageTitle, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -100,10 +101,10 @@ public class ProductsPage extends BaseTest {
     }
 
     public String getProductName() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, productNameSLBackpack, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, productNameSLBackpack, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), productNameSLBackpack, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), productNameSLBackpack, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -114,10 +115,10 @@ public class ProductsPage extends BaseTest {
 
 
     public String getProductPrice() {
-        if (platform.equalsIgnoreCase("Android")) {
-            return TestUtils.getAttribute(driver, productPriceSLBackpack, "text");
-        } else if (platform.equalsIgnoreCase("IOS")) {
-            return TestUtils.getAttribute(driver, productPriceSLBackpack, "label");
+        if (getPlatform().equalsIgnoreCase("Android")) {
+            return testUtils.getAttribute(getDriver(), productPriceSLBackpack, "text");
+        } else if (getPlatform().equalsIgnoreCase("IOS")) {
+            return testUtils.getAttribute(getDriver(), productPriceSLBackpack, "label");
         } else {
             System.out.println("Invalid platform: " + platform);
         }
@@ -127,22 +128,22 @@ public class ProductsPage extends BaseTest {
     }
 
     public ProductDetailsPage tapOnProduct(){
-        TestUtils.tap(driver,productSLBackpack);
+        testUtils.tap(getDriver(),productSLBackpack);
         return new ProductDetailsPage();
     }
 
     public ProductDetailsPage tapOnProductSLBackpack(){
-        TestUtils.tap(driver,productSLBackpack);
+        testUtils.tap(getDriver(),productSLBackpack);
         return new ProductDetailsPage();
     }
 
     public ProductDetailsPage tapOnProductSLFleeceJacket(){
-        TestUtils.tap(driver,productSLFleeceJacket);
+        testUtils.tap(getDriver(),productSLFleeceJacket);
         return new ProductDetailsPage();
     }
 
     public ProductDetailsPage tapOnProductSLTheThingsTShirt(){
-        TestUtils.tap(driver,productSLTheThingsTShirt);
+        testUtils.tap(getDriver(),productSLTheThingsTShirt);
         return new ProductDetailsPage();
     }
 
